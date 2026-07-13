@@ -1,0 +1,21 @@
+{
+  "images": 140,
+  "cases": 10,
+  "stations": 14,
+  "resolution_counts": {
+    "1280x720": 14,
+    "1920x1080": 126
+  },
+  "coarse_classes": 16,
+  "fine_classes": 31,
+  "fine_zero_pixel_classes": [
+    "Right bronchial artery",
+    "Gastric conduit",
+    "Omentum"
+  ],
+  "archive_mapping": {
+    "name.png": "coarse RGB mask",
+    "name(1).png": "fine RGB mask",
+    "name(2).png": "RGB surgical image"
+  }
+}
