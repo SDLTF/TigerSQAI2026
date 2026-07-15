@@ -1,0 +1,4 @@
+﻿Method,Status,Dice,IoU,Jaccard,95HD,ASSD,BestEpoch,MetricsPath
+U-Net,complete,0.3650107068598657,0.2470957066432638,0.2470957066432638,377.14944021653974,319.5721029536915,38.0,D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\unet_coarse\fold_0\metrics.json
+nnU-Net (100 epochs),complete,0.3603041177721273,0.24393005610035032,0.24393005610035032,375.80436160267516,321.8257964852743,,D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\nnunet_100e_coarse\fold_0\metrics.json
+PraNet-MC,complete,0.3718979745475873,0.24880720036740656,0.24880720036740656,370.8592899694434,321.1187418396347,29.0,D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\pranet_mc_coarse\fold_0\metrics.json

@@ -43,7 +43,10 @@ def main() -> None:
         "name": dataset_dir.name,
         "description": "TIGER SQ-AI 2026 thoracoscopic semantic segmentation",
         "channel_names": {"0": "R", "1": "G", "2": "B"},
-        "labels": {name: index for index, name in enumerate(class_names)},
+        "labels": {
+            ("background" if index == 0 else name): index
+            for index, name in enumerate(class_names)
+        },
         "numTraining": int(len(metadata)),
         "file_ending": ".png",
         "overwrite_image_reader_writer": "NaturalImage2DIO",

@@ -1,0 +1,53 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260714000451
+用户名: SDLTF\31529
+RunAs 用户: SDLTF\31529
+配置名称: 
+计算机: SDLTF (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\scripts\run_8h_fold0_benchmark.ps1 -Hours 8 -Workers 12
+进程 ID: 17072
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe -c from tigerseg.pranet_multiclass import MultiClassPraNet; m=MultiClassPraNet(16, backbone_name='res2net50_26w_4s', pretrained=True); print('PraNet-MC backbone preflight: OK')
+
+
+U-Net Fold 0 metrics already exist; U-Net is skipped.
+D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\unet_coarse\fold_0\metrics.json
+Starting nnU-Net 100e Fold 0.
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\nnUNetv2_train.exe 501 2d 0 -tr nnUNetTrainer_100epochs -device cuda
+
+
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\evaluate_predictions.py --data-root D:\Code\TigerSQ-AI-2026\TigerSQ-AI-2026-prepared --pred-dir D:\Code\TigerSQ-AI-2026\nnunet\nnUNet_results\Dataset501_TigerCoarse\nnUNetTrainer_100epochs__nnUNetPlans__2d\fold_0\validation --label-mode coarse --surface-width 640 --surface-height 384 --output D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\nnunet_100e_coarse\fold_0\metrics.json
+
+
+PraNet-MC wall-clock budget: 203 minutes.
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\train_pranet_multiclass.py --data-root D:\Code\TigerSQ-AI-2026\TigerSQ-AI-2026-prepared --label-mode coarse --fold 0 --backbone res2net50_26w_4s --backbone-weights imagenet --epochs 80 --patience 12 --batch-size 2 --workers 12 --prefetch-factor 4 --lr 1e-4 --weight-decay 1e-4 --max-minutes 203 --output D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\pranet_mc_coarse\fold_0
+
+
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\compare_fold0.py --project-root D:\Code\TigerSQ-AI-2026
+
+
+
+============================================================
+Fold-0 benchmark finished.
+Comparison CSV:
+D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\fold0_algorithm_comparison.csv
+Elapsed: 4.44 hours
+============================================================
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260714043114
+**********************

@@ -1,0 +1,68 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260714133548
+用户名: SDLTF\31529
+RunAs 用户: SDLTF\31529
+配置名称: 
+计算机: SDLTF (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\scripts\run_remaining_folds.ps1 -StartFold 2 -EndFold 2 -Workers 12
+进程 ID: 39296
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+############################################################
+Fold 2
+############################################################
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\train_unet.py --data-root D:\Code\TigerSQ-AI-2026\TigerSQ-AI-2026-prepared --label-mode coarse --fold 2 --encoder resnet34 --encoder-weights imagenet --epochs 80 --patience 15 --batch-size 2 --workers 12 --lr 0.0001 --weight-decay 0.0001 --width 640 --height 384 --surface-width 640 --surface-height 384 --seed 2026 --output D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\unet_coarse\fold_2
+
+
+Starting nnU-Net Fold 2.
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\nnUNetv2_train.exe 501 2d 2 -tr nnUNetTrainer_100epochs -device cuda
+
+2026-07-14 17:42:55.069431: predicting center_1_case_8_12L
+2026-07-14 17:42:55.258133: center_1_case_8_12L, shape torch.Size([3, 1, 1072, 1920]), rank 0
+2026-07-14 17:42:56.643773: predicting center_1_case_8_12R
+2026-07-14 17:42:56.800173: center_1_case_8_12R, shape torch.Size([3, 1, 1027, 1602]), rank 0
+2026-07-14 17:42:58.231179: predicting center_1_case_8_13L
+2026-07-14 17:42:58.406976: center_1_case_8_13L, shape torch.Size([3, 1, 1079, 1920]), rank 0
+2026-07-14 17:42:59.812834: predicting center_1_case_8_13R
+2026-07-14 17:42:59.996519: center_1_case_8_13R, shape torch.Size([3, 1, 1057, 1624]), rank 0
+2026-07-14 17:43:01.412863: predicting center_1_case_8_6L
+2026-07-14 17:43:01.599098: center_1_case_8_6L, shape torch.Size([3, 1, 1049, 1841]), rank 0
+2026-07-14 17:43:03.039707: predicting center_1_case_8_6R
+2026-07-14 17:43:03.224290: center_1_case_8_6R, shape torch.Size([3, 1, 1029, 1813]), rank 0
+2026-07-14 17:43:04.669244: predicting center_1_case_8_7L
+2026-07-14 17:43:04.843749: center_1_case_8_7L, shape torch.Size([3, 1, 1043, 1713]), rank 0
+2026-07-14 17:43:06.283721: predicting center_1_case_8_7R
+2026-07-14 17:43:06.475331: center_1_case_8_7R, shape torch.Size([3, 1, 1029, 1813]), rank 0
+2026-07-14 17:43:07.895725: predicting center_1_case_8_8
+2026-07-14 17:43:08.070694: center_1_case_8_8, shape torch.Size([3, 1, 1043, 1602]), rank 0
+2026-07-14 17:43:09.502428: predicting center_1_case_8_9
+2026-07-14 17:43:09.680835: center_1_case_8_9, shape torch.Size([3, 1, 1072, 1920]), rank 0
+2026-07-14 17:43:23.954879: Validation complete
+2026-07-14 17:43:23.964475: Mean Validation Dice:  0.2879819091147368
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\evaluate_predictions.py --data-root D:\Code\TigerSQ-AI-2026\TigerSQ-AI-2026-prepared --pred-dir D:\Code\TigerSQ-AI-2026\nnunet\nnUNet_results\Dataset501_TigerCoarse\nnUNetTrainer_100epochs__nnUNetPlans__2d\fold_2\validation --label-mode coarse --surface-width 640 --surface-height 384 --output D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\nnunet_100e_coarse\fold_2\metrics.json
+
+
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\python.exe D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\train_pranet_multiclass.py --data-root D:\Code\TigerSQ-AI-2026\TigerSQ-AI-2026-prepared --label-mode coarse --fold 2 --backbone res2net50_26w_4s --backbone-weights imagenet --decoder-channels 32 --ra-channels 64 --epochs 80 --patience 12 --batch-size 2 --workers 12 --prefetch-factor 4 --lr 0.0001 --weight-decay 0.0001 --width 640 --height 384 --surface-width 640 --surface-height 384 --seed 2026 --max-minutes 0 --output D:\Code\TigerSQ-AI-2026\tiger_segmentation_starter\runs\pranet_mc_coarse\fold_2
+
+
+Fold 2 is complete for all three methods.
+
+The selected fold range finished, but not all 15 metrics files exist yet.
+The final five-fold summary was not generated.
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260714175456
+**********************

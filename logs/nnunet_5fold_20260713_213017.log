@@ -1,0 +1,37 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260713213021
+用户名: SDLTF\31529
+RunAs 用户: SDLTF\31529
+配置名称: 
+计算机: SDLTF (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\scripts\run_nnunet_all_fixed.ps1
+进程 ID: 38328
+PSVersion: 5.1.26100.8655
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8655
+BuildVersion: 10.0.26100.8655
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+============================================================
+Fold 0
+============================================================
+Expected validation PNGs: 28
+Existing validation PNGs: 0
+Latest checkpoint exists : False
+Final checkpoint exists  : False
+Starting fold 0 from the beginning.
+
+Command: D:\Code\TigerSQ-AI-2026\.venv\Scripts\nnUNetv2_train.exe 501 2d 0 --npz -device cuda
+
+
+PS>TerminatingError():“管道已被停止。”
+>> TerminatingError():“管道已被停止。”
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260713233702
+**********************
